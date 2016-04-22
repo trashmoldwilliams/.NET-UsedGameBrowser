@@ -1,10 +1,8 @@
-﻿<html>
-<head>
-    <title>Used Game Browser</title>
-</head>
-<body>
-    <h1>Used Game Browser</h1>
+﻿@{
+    ViewData["Title"] = "Used Games";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <p>@Html.ActionLink("Games", "Index", "Games")</p>
-</body>
-</html>
+<h1>Used Game Browser</h1>
+
+<p>@Html.ActionLink("Games", "Index", "Games")</p>

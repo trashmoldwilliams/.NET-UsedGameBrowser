@@ -1,25 +1,22 @@
-﻿@model UsedGameBrowser.Models.Game
+﻿@{
+    ViewData["Title"] = "Used Games";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model UsedGameBrowser.Models.Game
 
-<html>
-<head>
-    <title>Used Game Browser - Create</title>
-</head>
-<body>
-    <h2>Create</h2>
-    <hr />
-    <h4>Add a new game</h4>
-    @using (Html.BeginForm())
-    {
-        @Html.LabelFor(model => model.Title)
-        @Html.TextBoxFor(model => model.Title)
-        @Html.LabelFor(model => model.AveragePrice)
-        @Html.TextBoxFor(model => model.AveragePrice)
-        @Html.LabelFor(model => model.Description)
-        @Html.TextAreaFor(model => model.Description)
-        @Html.LabelFor(model => model.PlatformId)
-        @Html.TextBoxFor(model => model.PlatformId)
-        <input type="submit" value="Add new game" />
-    }
-    <p>@Html.ActionLink("Back to list", "Index")</p>
-</body>
-</html>
+<h2>Create</h2>
+<hr />
+<h4>Add a new game</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+    @Html.LabelFor(model => model.AveragePrice)
+    @Html.TextBoxFor(model => model.AveragePrice)
+    @Html.LabelFor(model => model.Description)
+    @Html.TextAreaFor(model => model.Description)
+    @Html.LabelFor(model => model.PlatformId)
+    @Html.TextBoxFor(model => model.PlatformId)
+    <input type="submit" value="Add new game" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>
