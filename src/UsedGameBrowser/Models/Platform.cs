@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 
 namespace UsedGameBrowser.Models
 {
-    [Table("Games")]
-    public class Game
+    [Table("Platforms")]
+    public class Platform
     {
+        public Platform()
+        {
+            this.Games = new HashSet<Game>();
+        }
+
         [Key]
-        public int GameId { get; set; }
-        public string Title { get; set; }
+        public int PlatformId { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
         public int AveragePrice { get; set; }
-        public int PlatformId { get; set; }
-        public virtual Platform Platform { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
     }
 }

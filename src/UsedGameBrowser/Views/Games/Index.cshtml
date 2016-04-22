@@ -5,17 +5,34 @@
 @model IEnumerable<UsedGameBrowser.Models.Game>
 
 <h2>Used Game Browser</h2>
-<ul>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Platform.AveragePrice)
+        </th>
+        <th></th>
+    </tr>
+
     @foreach (var listItem in Model)
     {
-        <li>
-            @Html.DisplayFor(modelItem => listItem.Title)
-                | Average Price: $@Html.DisplayFor(modelItem => listItem.AveragePrice)
-                | @Html.ActionLink("Details", "Details", new { id = listItem.GameId })
-                | @Html.ActionLink("Edit", "Edit", new { id = listItem.GameId })
-                | @Html.ActionLink("Delete", "Delete", new { id = listItem.GameId })
-        </li>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => listItem.Title)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => listItem.AveragePrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = listItem.GameId }) |
+                @Html.ActionLink("Details", "Details", new { id = listItem.GameId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = listItem.GameId })
+            </td>
+        </tr>
     }
-</ul>
+</table>
 <p>@Html.ActionLink("Add new item", "Create")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>

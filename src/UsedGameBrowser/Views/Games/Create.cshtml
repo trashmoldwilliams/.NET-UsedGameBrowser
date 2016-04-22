@@ -4,19 +4,24 @@
 }
 @model UsedGameBrowser.Models.Game
 
-<h2>Create</h2>
-<hr />
 <h4>Add a new game</h4>
+<hr />
+
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Title)
-    @Html.TextBoxFor(model => model.Title)
+    @Html.EditorFor(model => model.Title)
+
     @Html.LabelFor(model => model.AveragePrice)
-    @Html.TextBoxFor(model => model.AveragePrice)
+    @Html.EditorFor(model => model.AveragePrice)
+
     @Html.LabelFor(model => model.Description)
-    @Html.TextAreaFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
     @Html.LabelFor(model => model.PlatformId)
-    @Html.TextBoxFor(model => model.PlatformId)
-    <input type="submit" value="Add new game" />
+    @Html.DropDownList("PlatformId")
+
+    <input type="submit" value="Create" class="btn btn-default" />
 }
+
 <p>@Html.ActionLink("Back to list", "Index")</p>

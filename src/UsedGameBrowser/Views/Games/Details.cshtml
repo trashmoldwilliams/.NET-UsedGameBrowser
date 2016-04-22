@@ -5,8 +5,10 @@
 @model UsedGameBrowser.Models.Game
 
 <h2>@Html.DisplayFor(model => model.Title)</h2>
-<h3>Average Price: $@Html.DisplayFor(model => model.AveragePrice)</h3>
-<h3>Platform: @Html.DisplayFor(model => model.PlatformId)</h3>
 <hr />
-<p>@Html.DisplayFor(model => model.Description)</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<p>Average Price: $@Html.DisplayFor(model => model.AveragePrice)</p>
+<p>@Html.DisplayNameFor(model => model.Platform) : @Html.DisplayFor(model => model.PlatformId)</p>
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.GameId }) | @Html.ActionLink("Back to List", "Index")</p>

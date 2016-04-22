@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using UsedGameBrowser.Models;
 using Microsoft.Data.Entity;
+using Microsoft.AspNet.Mvc.Rendering;
 
 namespace UsedGameBrowser.Controllers
 {
@@ -13,7 +14,7 @@ namespace UsedGameBrowser.Controllers
         private UsedGameBrowserContext db = new UsedGameBrowserContext();
         public IActionResult Index()
         {
-            return View(db.Games.ToList());
+            return View(db.Games.Include(games => games.Platform).ToList());
         }
 
         public IActionResult Details(int id)
@@ -24,6 +25,7 @@ namespace UsedGameBrowser.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.PlatformId = new SelectList(db.Platforms, "PlatformId", "Name");
             return View();
         }
 
@@ -38,6 +40,7 @@ namespace UsedGameBrowser.Controllers
         public IActionResult Edit(int id)
         {
             var thisGame = db.Games.FirstOrDefault(games => games.GameId == id);
+            ViewBag.PlatformId = new SelectList(db.Platforms, "PlatformId", "Name");
             return View(thisGame);
         }
 
