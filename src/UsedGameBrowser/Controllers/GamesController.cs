@@ -20,5 +20,18 @@ namespace UsedGameBrowser.Controllers
             var thisGame = db.Games.FirstOrDefault(games => games.GameId == id);
             return View(thisGame);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Game game)
+        {
+            db.Games.Add(game);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
