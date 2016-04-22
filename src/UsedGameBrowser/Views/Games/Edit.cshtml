@@ -1,0 +1,29 @@
+﻿@model UsedGameBrowser.Models.Game
+
+<html>
+<head>
+    <title>Used Game Browser - Edit</title>
+</head>
+<body>
+    <hr />
+    <h4>Edit this game: @Html.DisplayFor(model => model.Title)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.GameId)
+
+        @Html.LabelFor(model => model.Title)
+        @Html.EditorFor(model => model.Title)
+        @Html.LabelFor(model => model.AveragePrice)
+        @Html.EditorFor(model => model.AveragePrice)
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)
+        @Html.LabelFor(model => model.PlatformId)
+        @Html.EditorFor(model => model.PlatformId)
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>

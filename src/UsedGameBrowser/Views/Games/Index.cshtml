@@ -13,6 +13,8 @@
                 @Html.DisplayFor(modelItem => listItem.Title)
                  | Average Price: $@Html.DisplayFor(modelItem => listItem.AveragePrice)
                  | @Html.ActionLink("Details", "Details", new { id = listItem.GameId })
+                 | @Html.ActionLink("Edit", "Edit", new { id = listItem.GameId })
+                 | @Html.ActionLink("Delete", "Delete", new { id = listItem.GameId })
             </li>
         }
     </ul>
