@@ -1,0 +1,15 @@
+﻿@model UsedGameBrowser.Models.Game
+
+<html>
+<head>
+    <title>Used Game Browser - @Html.DisplayFor(model => model.Title)</title>
+</head>
+<body>
+    <h2>@Html.DisplayFor(model => model.Title)</h2>
+    <h3>Average Price: $@Html.DisplayFor(model => model.AveragePrice)</h3>
+    <h3>Platform: @Html.DisplayFor(model => model.PlatformId)</h3>
+    <hr />
+    <p>@Html.DisplayFor(model => model.Description)</p>
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

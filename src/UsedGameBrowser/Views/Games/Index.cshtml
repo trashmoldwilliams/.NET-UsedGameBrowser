@@ -1,0 +1,21 @@
+﻿@model IEnumerable<UsedGameBrowser.Models.Game>
+
+<html>
+<head>
+    <title>Used Game Browser</title>
+</head>
+<body>
+    <h2>Used Game Browser</h2>
+    <ul>
+        @foreach (var listItem in Model)
+        {
+            <li>
+                @Html.DisplayFor(modelItem => listItem.Title)
+                 | Average Price: $@Html.DisplayFor(modelItem => listItem.AveragePrice)
+                 | @Html.ActionLink("Details", "Details", new { id = listItem.GameId })
+            </li>
+        }
+    </ul>
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</body>
+</html>
