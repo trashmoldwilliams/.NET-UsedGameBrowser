@@ -13,5 +13,8 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <https://github.com/trashmoldwilliams/UsedGameBrowser.git>`
-* create needed tables in SQL (will use migration soon)
+* open UsedGameBrowser.sql and create database
+* after bulding, in project folder, run:
+  * dnx ef migrations add Initial -c ApplicationDbContext
+  * dnx ef database update -c ApplicationDbContext
 * open project file in visual studio and run
