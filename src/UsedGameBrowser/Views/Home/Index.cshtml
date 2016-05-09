@@ -1,9 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Used Games";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model IEnumerable<UsedGameBrowser.Models.Platform>
 
-<h1>Used Game Browser</h1>
-
-<p>@Html.ActionLink("Games", "Index", "Games")</p>
-<p>@Html.ActionLink("User Accounts", "Index", "Account")</p>
+<h2>Used Game Browser</h2>
+<hr />
+<ul>
+    @foreach (var platform in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => platform.Name) | @Html.ActionLink("Games", "PlatformGames", new { id = platform.Id })</li>
+    }
+</ul>

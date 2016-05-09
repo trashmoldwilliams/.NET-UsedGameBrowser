@@ -1,0 +1,12 @@
+﻿@model IEnumerable<UsedGameBrowser.Models.Game>
+
+<h2>Used Game Browser</h2>
+<hr />
+<ul>
+    @foreach (var game in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => game.Name) | @Html.ActionLink("Details", "GameDetails", new { id = game.Id })</li>
+    }
+</ul>
+
+@Html.ActionLink("Home", "Index")

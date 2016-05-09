@@ -3,18 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{837E71C8-C364-48C3-8EA4-5C3744422843}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{716271C3-C024-4DCE-B52B-7CAED4343A14}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{11516BD1-99FC-4AC6-94B0-1DF7E222150D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02FE39C0-C6F9-43F1-A3E7-7355B90A9F2E}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UsedGameBrowser", "src\UsedGameBrowser\UsedGameBrowser.xproj", "{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{89D60935-1B21-4F9B-AD34-AEFD8CCFA6E5}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UsedGameBrowser.Tests", "UsedGameBrowser.Tests\UsedGameBrowser.Tests.xproj", "{6AB22341-709C-40E1-9DBE-16530C77AC9B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UsedGameBrowser", "src\UsedGameBrowser\UsedGameBrowser.xproj", "{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,20 +18,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6AB22341-709C-40E1-9DBE-16530C77AC9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6AB22341-709C-40E1-9DBE-16530C77AC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6AB22341-709C-40E1-9DBE-16530C77AC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6AB22341-709C-40E1-9DBE-16530C77AC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{EEB69726-3EF6-4F6D-B23D-7C2F8A64DA3A} = {837E71C8-C364-48C3-8EA4-5C3744422843}
-		{6AB22341-709C-40E1-9DBE-16530C77AC9B} = {89D60935-1B21-4F9B-AD34-AEFD8CCFA6E5}
+		{F3BFBC7A-6AD6-4B64-8071-4AD584C3BBCD} = {716271C3-C024-4DCE-B52B-7CAED4343A14}
 	EndGlobalSection
 EndGlobal

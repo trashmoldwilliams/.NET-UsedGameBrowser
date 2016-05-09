@@ -5,44 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Data.Entity;
-using Microsoft.Extensions.Configuration;
-using UsedGameBrowser.Models;
 
 namespace UsedGameBrowser
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; set; }
-        public Startup()
-        {
-            var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json");
-            Configuration = builder.Build();
-        }
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<UsedGameBrowserContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
-            services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(Configuration["Data:DefaultConnection:ConnectionString"]));
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            app.UseStaticFiles();
-            app.UseIdentity();
             app.UseIISPlatformHandler();
 
             app.UseMvc(routes =>
@@ -54,7 +29,7 @@ namespace UsedGameBrowser
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Error: page not found");
+                await context.Response.WriteAsync("PAGE NOT FOUND");
             });
         }
 
