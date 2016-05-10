@@ -15,18 +15,28 @@ namespace UsedGameBrowser.Models
 
         public static List<Game> GetPlatformGames(int id)
         {
-            var client = new RestClient("https://www.igdb.com/api/v1/");
-            var request = new RestRequest("/platforms/" + id + "/games?token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU&?offset=26", Method.GET);
-            var response = client.Execute(request);
-            JObject jsonResponse = (JObject)JsonConvert.DeserializeObject(response.Content);
-            var platformList = JsonConvert.DeserializeObject<List<Game>>(jsonResponse["games"].ToString());
-            return platformList;
+            var offset = 0;
+            List<Game> gameList = new List<Game>();
+            for (int i = 0; i < 25; i++)
+            {
+                var client = new RestClient("https://www.igdb.com/api/v1/");
+                var request = new RestRequest("platforms/" + id + "/games?offset=" + offset + "&token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU", Method.GET);
+                offset += 25;
+                var response = client.Execute(request);
+                JObject jsonResponse = (JObject)JsonConvert.DeserializeObject(response.Content);
+                var addItem = JsonConvert.DeserializeObject<List<Game>>(jsonResponse["games"].ToString());
+                foreach (Game item in addItem)
+                {
+                    gameList.Add(item);
+                } 
+            }
+            return gameList;
         }
 
         public static Game GetGameDetails(int id)
         {
             var client = new RestClient("https://www.igdb.com/api/v1/");
-            var request = new RestRequest("/games/" + id + "?token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU", Method.GET);
+            var request = new RestRequest("games/" + id + "?token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU", Method.GET);
             var response = client.Execute(request);
             JObject jsonresponse = (JObject)JsonConvert.DeserializeObject(response.Content);
             var game = JsonConvert.DeserializeObject<Game>(jsonresponse["game"].ToString());
