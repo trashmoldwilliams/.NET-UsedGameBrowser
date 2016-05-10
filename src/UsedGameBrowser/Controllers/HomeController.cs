@@ -20,6 +20,7 @@ namespace UsedGameBrowser.Controllers
         public IActionResult GameDetails(int id)
         {
             var game = Game.GetGameDetails(id);
+            game.Link = Game.GetEbayLink(game);
             return View(game);
         }
     }

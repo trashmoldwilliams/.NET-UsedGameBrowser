@@ -5,7 +5,7 @@
 <ul>
     @foreach (var game in Model)
     {
-        <li>@Html.DisplayFor(modelItem => game.Name) | @Html.ActionLink("Details", "GameDetails", new { id = game.Id })</li>
+        <li>@Html.DisplayFor(modelItem => game.Name) | @Html.ActionLink("Details", "GameDetails", new { id = game.Id }, new { target = "_blank" })</li>
     }
 </ul>
 

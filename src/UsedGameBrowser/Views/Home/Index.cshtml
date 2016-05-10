@@ -5,6 +5,9 @@
 <ul>
     @foreach (var platform in Model)
     {
+        @if(platform.Id != 6 && platform.Id != 3 && platform.Id != 14 && platform.Id != 47 && platform.Id != 36 && platform.Id != 74 && platform.Id != 56 && platform.Id != 92 && platform.Id != 45 && platform.Id != 39 && platform.Id != 73 && platform.Id != 72 && platform.Id != 129 && platform.Id != 82 && platform.Id != 55 && platform.Id != 34 && platform.Id != 13)
+        {
         <li>@Html.DisplayFor(modelItem => platform.Name) | @Html.ActionLink("Games", "PlatformGames", new { id = platform.Id })</li>
+        }
     }
 </ul>
