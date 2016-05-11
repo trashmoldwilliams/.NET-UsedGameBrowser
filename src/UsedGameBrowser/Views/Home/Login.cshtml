@@ -8,13 +8,26 @@
 
 <h2>Log in with your account</h2>
 <hr />
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
+<div class="form">
+    @using (Html.BeginForm())
+    {
+        <div class="col-xs-6">
+            @Html.LabelFor(m => m.Email)
+        </div>
+        <div class="col-xs-6">
+            @Html.TextBoxFor(m => m.Email)
+        </div>
 
-    <input type="submit" value="Log in" class="btn btn-default" />
-}
+        <div class="col-xs-6">
+            @Html.LabelFor(m => m.Password)
+        </div>
+        <div class="col-xs-6">
+            @Html.PasswordFor(m => m.Password)
+        </div>
+
+        <br />
+
+        <input type="submit" value="Log in" class="btn btn-default" />
+    }
+</div>

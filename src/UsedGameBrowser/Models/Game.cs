@@ -18,7 +18,7 @@ namespace UsedGameBrowser.Models
         {
             var offset = 0;
             List<Game> gameList = new List<Game>();
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 50; i++)
             {
                 var client = new RestClient("https://www.igdb.com/api/v1/");
                 var request = new RestRequest("platforms/" + id + "/games?offset=" + offset + "&token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU", Method.GET);
