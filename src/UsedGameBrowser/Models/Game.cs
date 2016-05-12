@@ -13,6 +13,7 @@ namespace UsedGameBrowser.Models
         public string Name { get; set; }
         public string Summary { get; set; }
         public string Link { get; set; }
+        public string Footage { get; set; }
 
         public static List<Game> GetPlatformGames(int id)
         {
@@ -48,6 +49,13 @@ namespace UsedGameBrowser.Models
         {
             var formattedName = Uri.EscapeUriString(game.Name);
             var url = "http://www.ebay.com/sch/Video%20Game%20" + formattedName;
+            return url;
+        }
+
+        public static string GetYoutubeLink(Game game)
+        {
+            var formattedName = Uri.EscapeUriString(game.Name);
+            var url = "http://m.youtube.com/results?q=Longplay%20" + formattedName;
             return url;
         }
 

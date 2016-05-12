@@ -31,6 +31,7 @@ namespace UsedGameBrowser.Controllers
         {
             var game = Game.GetGameDetails(id);
             game.Link = Game.GetEbayLink(game);
+            game.Footage = Game.GetYoutubeLink(game);
             return View(game);
         }
 
