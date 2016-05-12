@@ -19,7 +19,7 @@ namespace UsedGameBrowser.Models
             for (int i = 0; i < 5; i++)
             {
                 var client = new RestClient("https://www.igdb.com/api/v1/");
-                var request = new RestRequest("platforms?token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU&offset=" + offset, Method.GET);
+                var request = new RestRequest("platforms?token=" + EnvironmentVariables.AuthToken + "&offset=" + offset, Method.GET);
                 offset += 25;
                 var response = client.Execute(request);
                 JObject jsonResponse = (JObject)JsonConvert.DeserializeObject(response.Content);
