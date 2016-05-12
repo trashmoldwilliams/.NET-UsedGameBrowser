@@ -16,6 +16,20 @@ a:hover {
     color: #009900;
 }
 
+a:visited {
+    color: #6d946b;
+}
+
 .form {
     width: 200px;
+}
+
+#searchResults {
+    display: none;
+    width: 100%;
+    height: 200px;
+}
+
+input {
+    color: black;
 }

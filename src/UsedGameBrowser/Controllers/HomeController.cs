@@ -86,5 +86,11 @@ namespace UsedGameBrowser.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
+
+        public IActionResult SearchGames(string search)
+        {
+            var output = Game.SearchGames(search);
+            return Json(output);
+        }
     }
 }

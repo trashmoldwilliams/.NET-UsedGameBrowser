@@ -50,5 +50,21 @@ namespace UsedGameBrowser.Models
             var url = "http://www.ebay.com/sch/Video%20Game%20" + formattedName;
             return url;
         }
+
+        public static string SearchGames(string search)
+        {
+            var formattedSearch = Uri.EscapeUriString(search);
+            var client = new RestClient("https://www.igdb.com/api/v1/");
+            var request = new RestRequest("/games/search?q=" + formattedSearch + "&token=ozkH_hQbsV8YA2Zk0MojOgnPlkunpS-oSCBlabKehYU", Method.GET);
+            var response = client.Execute(request);
+            JObject jsonResponse = (JObject)JsonConvert.DeserializeObject(response.Content);
+            var addItem = JsonConvert.DeserializeObject<List<Game>>(jsonResponse["games"].ToString());
+            var output = "";
+            foreach (Game item in addItem)
+            {
+                output += "<li> <a href='/Home/GameDetails/" + item.Id + "' target='_blank'>" + item.Name + "</a> </li>";
+            }
+            return output;
+        }
     }
 }
